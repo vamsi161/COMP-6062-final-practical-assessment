@@ -1,0 +1,31 @@
+.box{
+    background-color: rgb(36, 54, 52);
+    color:white;
+    min-height: 600px;
+    text-align: center;
+    border-style:solid;
+}
+.heading{
+    background-color: rgb(57, 37, 79);
+    color: red;
+}
+.footer{
+    color: rgb(176, 190, 199);
+}
+.myImage{
+
+    min-height: 300px;
+
+}
+.fontStyle{
+    font-size:medium;
+}
+@media(min-width: 770px)
+{
+body{
+    background-color:rgb(57, 37, 79);;
+    color: black;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+}
