@@ -1,5 +1,6 @@
 const app = Vue.createApp({
     data () {
+        // user variables here
         return {
             firstName :'vamsi',
             lastName : 'reddy',
@@ -24,6 +25,7 @@ const app = Vue.createApp({
         };
     
     },
+
 created(){
     this.nextImage();
     this.getWeather();
@@ -33,6 +35,7 @@ computed:{
 
 },
 methods:{
+    // method for getting next user information
     nextImage() {
         fetch('https://comp6062.liamstewart.ca/random-user-data')
         .then(response => {
@@ -44,6 +47,7 @@ methods:{
                console.log("An Error Occured. Please try again");
             }
         })
+        // parsing the data received from data base and assinging it to local variables
         .then(data => {
             let userData = data.user_profile;
             this.firstName = userData.first_name;
@@ -58,7 +62,7 @@ methods:{
         })
     },
     getWeather(){
-
+        // combining the data base url with information of city , province and Country to get weather data
         let weatherUrl = `https://comp6062.liamstewart.ca/weather-data?city=${this.wether.city}&province=${this.wether.province}&country=${this.wether.country}`
         fetch(weatherUrl)
         .then(response => {
@@ -70,18 +74,21 @@ methods:{
                console.log("An Error Occured. Please try again");
             }
         })
+         // parsing the data received from data base and assinging it to local variable
         .then(data=>{
             let weatherData = data.weather_data;
             this.wether.Temperature = weatherData.temperature;
             this.wether.Wind = weatherData.wind_speed;
             this.wether.Description = weatherData.weather_description;
         } )
+        //checking for errors
         .catch(error =>{
             console.log('Total failure');
         })
     
     },
     getWord(){
+    // combining the data base url with information of word to get word defination and phonetic
         let wordUrl = `https://comp6062.liamstewart.ca/api/define?word=${this.word.userWord}`;
         fetch(wordUrl)
         .then(response => {
@@ -93,12 +100,14 @@ methods:{
                console.log("An Error Occured. Please try again");
             }
         })
+        // parsing the data received from data base and assinging it to local variable
         .then(data=>{
             let wordData = data;
             this.word.returnWord = wordData.word;
             this.word.phonetic = wordData.phonetic;
             this.word.definition = wordData.definition;
         } )
+        //checking for errors
         .catch(error =>{
             console.log('Total failure');
         })

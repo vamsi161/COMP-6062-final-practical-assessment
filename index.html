@@ -8,12 +8,15 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
+        <!--header Section-->
         <header>
             <h1 class = "heading">Vamseedhar Reddy B - 1243815</h1>
         </header>
         <main>
+            
             <div class="container">
                 <div class = "row" id = "app">
+                    <!--- Random user profile section--->
                     <div class = "col-md-4 box ">
                         <h2>Name: {{firstName}} {{lastName}}</h2>
                         <img class="myImage" v-bind:src="imageUrl" alt="Description of image here">
@@ -21,6 +24,7 @@
                         <h2 class = "fontStyle">Age: {{age}}</h2>
                         <button @click = "nextImage">Next User Profile</button>
                     </div>
+                    <!-- Weather Update Section-->
                     <div class = "col-md-4 box">
                         <div>
                             <h2>Weather Update</h2>
@@ -42,6 +46,7 @@
                         <h2>Description:{{wether.Description}}</h2>
                         <button  @click = "getWeather">Get Weather Data</button>
                     </div>
+                    <!--Word Definition module section-->
                     <div class = "col-md-4 box">
                         <h2>Find the definition</h2>
                         <div>
@@ -66,8 +71,8 @@
             </div>
         </main>
         <footer>
+            <!--Footer section-->
             <div class = "footer">&copy; 2025 Vamsi Website.All rights reserved.</div>
-
         </footer>
         <script src = https://unpkg.com/vue@3.4.31/dist/vue.global.js></script>
         <script src="scripts/app.js"></script>
